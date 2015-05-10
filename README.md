@@ -34,6 +34,7 @@ print(_("unknown phrase")) -- prints "unknown phrase"
 You need [busted][busted] to run unit tests.
 
 ```bash
+$ busted
 ```
 
 ## See also
