@@ -3,7 +3,7 @@
 -----------------------------------------------------------
 -- load an mo file and return a lua table
 -- @param mo_file name of the file to load
--- @return table on success
+-- @return translating function on success
 -- @return nil,string on failure
 -- @copyright J.JÃrgen von Bargen
 -- @licence I provide this as public domain
