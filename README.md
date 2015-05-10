@@ -1,5 +1,8 @@
 # mo.lua, parser for MO files
 
+[![Travis build][travis-badge]][travis-page]
+[![License][license-badge]][license-page]
+
 [Implementation][mail] by J.Jørgen von Bargen was sent to
 [lua-l][lua-l] mailing list as public domain.
 
@@ -63,3 +66,7 @@ This module is used to parse `.mo` file from Lua.
 [gettext]: http://www.gnu.org/software/hello/manual/gettext/MO-Files.html
 [poedit]: http://poedit.net/
 [busted]: http://olivinelabs.com/busted/
+[travis-page]: https://travis-ci.org/starius/mo.lua
+[travis-badge]: https://travis-ci.org/starius/mo.lua.png
+[license-page]: LICENSE
+[license-badge]: http://img.shields.io/badge/License-MIT-brightgreen.png
