@@ -26,6 +26,13 @@ print(_("hello")) -- prints "привет"
 print(_("unknown phrase")) -- prints "unknown phrase"
 ```
 
+## Unit tests
+
+You need [busted][busted] to run unit tests.
+
+```bash
+```
+
 ## See also
 
 Let us translate some Lua project into Russian.
@@ -55,3 +62,4 @@ This module is used to parse `.mo` file from Lua.
 [lua-l]: http://www.lua.org/lua-l.html
 [gettext]: http://www.gnu.org/software/hello/manual/gettext/MO-Files.html
 [poedit]: http://poedit.net/
+[busted]: http://olivinelabs.com/busted/

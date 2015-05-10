@@ -1,0 +1,5 @@
+msgid "hello"
+msgstr "привет"
+
+msgid "today"
+msgstr "сегодня"
