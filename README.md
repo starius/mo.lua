@@ -1,4 +1,4 @@
-# mo.lua, parser for MO files
+# mo.lua, parser of MO files
 
 [![Travis build][travis-badge]][travis-page]
 [![Coverage Status][coveralls-badge]][coveralls-page]
