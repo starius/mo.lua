@@ -32,7 +32,7 @@ print(_("unknown phrase")) -- prints "unknown phrase"
 
 ## Unit tests
 
-You need [busted][busted] to run unit tests.
+You need [busted][busted] and [gettext][gettext] to run unit tests.
 
 ```bash
 $ busted
