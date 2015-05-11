@@ -42,7 +42,7 @@ describe("mo", function()
         assert.equal('unknown', _("unknown"))
     end)
 
-    it("returns trivial function if version of mo file > 0",
+    it("returns trivial function if #version of mo file > 0",
     function()
         os.execute(msgfmt)
         -- patch .mo file
@@ -52,7 +52,7 @@ describe("mo", function()
         f:close()
         -- read it with MO parser
         local mo = require 'mo'
-        local _ = assert(mo('spec/messages.mo.nofile'))
+        local _ = assert(mo('spec/messages.mo'))
         assert.equal('hello', _("hello"))
     end)
 end)
