@@ -9,4 +9,13 @@ describe("mo", function()
         assert.equal('сегодня', _("today"))
         assert.equal('unknown', _("unknown"))
     end)
+
+    it("returns trivial function if mo file doesn't exist",
+    function()
+        local mo = require 'mo'
+        local _ = assert(mo('spec/messages.mo.nofile'))
+        assert.equal('hello', _("hello"))
+        assert.equal('hello', _("today"))
+        assert.equal('unknown', _("unknown"))
+    end)
 end)
