@@ -35,7 +35,7 @@ return {
   -- (exclude overrules include, do not include
   -- the .lua extension, path separator is always '/')
   ["include"] = {
-    "mo.lua$",
+    "mo$",
   },
 
   -- Patterns for files to exclude when reporting
