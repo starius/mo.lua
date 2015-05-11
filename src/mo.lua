@@ -4,25 +4,29 @@
 -- load an mo file and return a lua table
 -- @param mo_file name of the file to load
 -- @return translating function on success
--- @return nil,string on failure
+-- @return on failure trivial function returning its argument
 -- @copyright J.JÃrgen von Bargen
 -- @licence I provide this as public domain
 -- @see http://www.gnu.org/software/hello/manual/gettext/MO-Files.html
 -----------------------------------------------------------
 
+local function trivial(text)
+    return text
+end
+
 return function(mo_file)
     if not mo_file then
-        return function(text)
-            return text
-        end
+        return trivial
     end
 
     --------------------------------
     -- open file and read data
     --------------------------------
-    local fd,err=io.open(mo_file,"rb")
-    if not fd then return nil,err end
-    local mo_data=fd:read("*all")
+    local fd, err = io.open(mo_file, "rb")
+    if not fd then
+        return trivial
+    end
+    local mo_data = fd:read("*all")
     fd:close()
 
     --------------------------------
@@ -49,15 +53,15 @@ return function(mo_file)
             return ((a*256+b)*256+c)*256+d
         end
     else
-        return nil,"no valid mo-file"
+        return trivial
     end
 
     --------------------------------
     -- version
     --------------------------------
-    local V=peek_long(4)
-    if V~=0 then
-        return nil, "unsupported version"
+    local V = peek_long(4)
+    if V ~= 0 then
+        return trivial
     end
 
     ------------------------------
