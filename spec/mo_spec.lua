@@ -11,14 +11,14 @@ describe("mo", function()
     end)
 
     it("reads little endian file (intel magic)", function()
-        os.execute(msgfmt .. '--endianness=little')
+        os.execute(msgfmt .. ' --endianness=little')
         local mo = require 'mo'
         local _ = assert(mo('spec/messages.mo'))
         assert.equal('привет', _("hello"))
     end)
 
     it("reads big endian file (motorola magic)", function()
-        os.execute(msgfmt .. '--endianness=little')
+        os.execute(msgfmt .. ' --endianness=big')
         local mo = require 'mo'
         local _ = assert(mo('spec/messages.mo'))
         assert.equal('привет', _("hello"))
