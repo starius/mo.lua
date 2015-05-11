@@ -1,6 +1,7 @@
 # mo.lua, parser for MO files
 
 [![Travis build][travis-badge]][travis-page]
+[![Coverage Status][coveralls-badge]][coveralls-page]
 [![License][license-badge]][license-page]
 
 [Implementation][mail] by J.Jørgen von Bargen was sent to
@@ -69,5 +70,7 @@ This module is used to parse `.mo` file from Lua.
 [busted]: http://olivinelabs.com/busted/
 [travis-page]: https://travis-ci.org/starius/mo.lua
 [travis-badge]: https://travis-ci.org/starius/mo.lua.png
+[coveralls-page]: https://coveralls.io/r/starius/mo.lua
+[coveralls-badge]: https://coveralls.io/repos/starius/mo.lua/badge.png
 [license-page]: LICENSE
 [license-badge]: http://img.shields.io/badge/License-MIT-brightgreen.png
