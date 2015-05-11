@@ -55,4 +55,18 @@ describe("mo", function()
         local _ = assert(mo('spec/messages.mo'))
         assert.equal('hello', _("hello"))
     end)
+
+    it("returns trivial function if magic is wrong",
+    function()
+        os.execute(msgfmt)
+        -- patch .mo file
+        local f = io.open('spec/messages.mo', 'r+')
+        f:seek('set', 0)
+        f:write('1234')
+        f:close()
+        -- read it with MO parser
+        local mo = require 'mo'
+        local _ = assert(mo('spec/messages.mo'))
+        assert.equal('hello', _("hello"))
+    end)
 end)
