@@ -1,4 +1,4 @@
-package = "mo.lua"
+package = "mo"
 version = "dev-1"
 source = {
     url = "git://github.com/starius/mo.lua.git"

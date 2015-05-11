@@ -9,7 +9,7 @@
 ## Installation
 
 ```bash
-$ luarocks install mo.lua
+$ luarocks install mo
 ```
 
 ## Usage
