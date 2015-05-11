@@ -4,7 +4,7 @@
 -- load an mo file and return a lua table
 -- @param mo_file name of the file to load
 -- @return translating function on success
--- @return on failure trivial function returning its argument
+-- @return on failure trivial function returning its argument, plus error string
 -- @copyright J.JÃrgen von Bargen
 -- @licence I provide this as public domain
 -- @see http://www.gnu.org/software/hello/manual/gettext/MO-Files.html
@@ -15,8 +15,8 @@ local function trivial(text)
 end
 
 return function(mo_file)
-    if not mo_file then
-        return trivial
+    if (type(mo_file) ~= "string") or (mo_file == "") then
+        return trivial, "ERROR: Invalid path argument"
     end
 
     --------------------------------
@@ -24,7 +24,7 @@ return function(mo_file)
     --------------------------------
     local fd, err = io.open(mo_file, "rb")
     if not fd then
-        return trivial
+        return trivial, "ERROR: "..err
     end
     local mo_data = fd:read("*all")
     fd:close()
@@ -53,7 +53,7 @@ return function(mo_file)
             return ((a*256+b)*256+c)*256+d
         end
     else
-        return trivial
+        return trivial, "ERROR: Unknown magic number "..tostring(magic)
     end
 
     --------------------------------
@@ -61,7 +61,7 @@ return function(mo_file)
     --------------------------------
     local V = peek_long(4)
     if V ~= 0 then
-        return trivial
+        return trivial, "ERROR: Invalid version number "..tostring(V)
     end
 
     ------------------------------
